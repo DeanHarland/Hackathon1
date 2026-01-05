@@ -78,9 +78,9 @@ This project was built by a team of 4 developers as part of a collaborative hack
 
 ## Wireframes
 
-![Weather App UI](assets\images\wireframe-computer.png)
-![Weather App UI](assets\images\wireframe-phone-tablet.png)
-![Weather App UI](assets\images\wireframe-tablet.png)
+![Weather App UI](assets/images/wireframe-computer.png)
+![Weather App UI](assets/images/wireframe-phone-tablet.png)
+![Weather App UI](assets/images/wireframe-tablet.png)
 
 ## 📄 License
 
