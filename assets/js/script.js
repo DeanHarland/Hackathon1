@@ -18,14 +18,14 @@ const uvIndex = document.querySelector('#uv-index');
 const sevenDayForecast = document.getElementById('7-day-container');
 
 // API KEY
-let apikey= 'f9eb5f9c591eee6ccbbdcae90704650d';
+let apikey= 'eee19215246ad04e764f70a75f17fda0';
 
 // Event listen
 submitButton.addEventListener("click", handleButtonClick);
 
 
 // Focus the input field on page load
-// inputElement.focus();
+inputField.focus();
 
 function handleButtonClick(){
 
