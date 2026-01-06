@@ -13,7 +13,7 @@ const todaysForecast = document.querySelector("#today-forecast");
 const realFeel = document.querySelector("#real-feel");
 const Wind = document.querySelector("#wind");
 const rainChance = document.querySelector("#air-rain-chance");
-const uvIndex = document.querySelector("#uv-index");
+const windDirection = document.querySelector("#wind-direction");
 // Seven day forecast sectiopn
 const sevenDayForecast = document.getElementById("7-day-container");
 
@@ -60,6 +60,10 @@ function handleButtonClick(e) {
             chanceRain.innerText = `Chance of Rain: ${data.list[0].pop * 100}%`;
 
             // Display current weather information for air condition section
+            realFeel.innerText = `${data.list[0].main.feels_like}°C`;
+            Wind.innerText = `${data.list[0].wind.speed} m/s`;
+            rainChance.innerText = `${data.list[0].pop * 100}%`;
+            windDirection.innerText = `${data.list[0].wind.deg}°`;
 
             // Loop through the next 4 days and add forecast
             // for (let i = 1; i <= 5; i++) {
