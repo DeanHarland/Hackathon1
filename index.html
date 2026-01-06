@@ -38,26 +38,83 @@
     </nav>
     <div class="search-container main-content mb-2">
         <div class="row bg-primary">
-            <div class="col-12">SEARCH BAR</div>
+            <div class="col-12"><label for="input">Enter location:</label>
+                <input type="text" id="input">
+                <button type="submit" id="button">Submit</button>
+            </div>
         </div>
     </div>
     <div class="content-wrapper main-content">
         <div class="main-forecast-container mb-2">
             <div class="row bg-secondary text-white">
-                <div class="col-12">CITY SUMMARY</div>
-                <div class="col-12">TODAY'S FORECAST</div>
-                <div class="col-12">AIR CONDITIONS</div>
+                <div class="col-12">CITY SUMMARY
+                    <h2 id="city-name"></h2>
+                    <p id="chance-rain"></p>
+                    <h1 id="today-temp"></h1>
+                    <div id="main-icon"></div>
+
+                </div>
+
+                <div id="3-hour-forecast" class="row col-12">
+                    <h1>TODAY'S FORECAST</h1>
+                    <div id="today-forecast">
+
+                    </div>
+                </div>
+
+
+                <div class="col-12">
+                    <h1>AIR CONDITIONS</h1>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+
+                            <p><i class="fa-solid fa-temperature-high"></i> Real Feel</p>
+                            <p id="real-feel"></p>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+
+                            <p><i class="fa-solid fa-wind"></i> Wind</p>
+                            <p id="wind"></p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+
+                            <p><i class="fa-solid fa-droplet"></i> Chance of rain</p>
+                            <p id="rain-chance"></p>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+
+                            <p><i class="fa-solid fa-sun"></i> UV Index</p>
+                            <p id="uv-index"></p>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="weekly-forecast-container">
             <div class="row bg-primary">
-                <div class="col-12">7 DAY FORECAST</div>
+                <div class="col-12">
+                    <h1>7 DAY FORECAST</h1>
+                    <div id="7-day-container">
+
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://kit.fontawesome.com/2e6f8ddc3b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>
