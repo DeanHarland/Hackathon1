@@ -52,12 +52,14 @@ function handleButtonClick(e) {
             // Log API response for debugging
             console.log(data);
 
-            // Display current weather information
+            // Display current weather information for main forecast
             let weatherIcon = data.list[0].weather[0].icon;
             mainIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherIcon}@4x.png"></img>`;
             cityName.innerText = data.city.name;
             todayTemp.innerText = `${data.list[0].main.temp}°C`;
             chanceRain.innerText = `Chance of Rain: ${data.list[0].pop * 100}%`;
+
+            // Display current weather information for air condition section
 
             // Loop through the next 4 days and add forecast
             // for (let i = 1; i <= 5; i++) {
