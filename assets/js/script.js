@@ -65,9 +65,56 @@ function handleButtonClick(e) {
             rainChance.innerText = `${data.list[0].pop * 100}%`;
             windDirection.innerText = `${data.list[0].wind.deg}°`;
 
-            // Loop through the next 4 days and add forecast
-            // for (let i = 1; i <= 5; i++) {
-            //     addForecast(data.list[i], i);
-            // }
+            // Loop through the next 5 days and add forecast
+            for (let i = 1; i <= 5; i++) {
+                addForecast(data.list[i], i);
+            }
         });
+}
+
+function addForecast(data, days) {
+    // Main weather condition
+    let headline = data.weather[0].main;
+    // Icon code
+    let weatherIcon = data.weather[0].icon;
+    // Weather icon image
+    let imgHtml = `<image src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png"></image>`;
+    // Get the date from the API and format it
+    let dateString = formatDate(data.dt);
+
+    // Build HTML for the forecast
+    let htmlString = `
+            <div class="col-3">
+                <span>${days} day(s) from now</span>
+            </div>
+            <div class="col-3">
+                ${imgHtml}
+            </div>
+            <div class="col-3">
+                <span>${headline}</h3>
+            </div>
+            <div class="col-3">
+                <span>${dateString}</span>
+            </div>
+            `;
+
+    // Append the forecast to the container
+    sevenDayForecast.innerHTML += htmlString;
+    inputField.value = "";
+    inputField.focus();
+}
+
+// Convert Unix timestamp to readable date
+function formatDate(unixTimestamp) {
+    // Step 1: Multiply by 1000 (JavaScript needs milliseconds, not seconds)
+    let milliseconds = unixTimestamp * 1000;
+
+    // Step 2: Create a Date object
+    let date = new Date(milliseconds);
+
+    // Step 3: Set how we want the date to look
+    let options = { day: "numeric", month: "short" };
+
+    // Step 4: Convert to a readable string
+    return date.toLocaleDateString("en-GB", options);
 }
