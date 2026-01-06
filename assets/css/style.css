@@ -36,13 +36,15 @@
         overflow: hidden;
     } */
 
-    .main-forecast-container {
+    #main-forecast-container {
         flex: 2;
         overflow: hidden;
+        padding-right: 12px;
     }
 
-    .weekly-forecast-container {
+    #weekly-forecast-container {
         flex: 1;
         overflow: hidden;
+        padding-left: 12px;
     }
 }
