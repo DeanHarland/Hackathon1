@@ -20,6 +20,8 @@
 
     .main-content {
         margin-left: 10vw;
+        width: calc(100% - 10vw);
+        overflow-x: hidden;
     }
 }
 
