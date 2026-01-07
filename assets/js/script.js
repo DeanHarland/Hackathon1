@@ -29,8 +29,13 @@ const sevenDayForecast = document.getElementById("7-day-container");
 // API KEY
 let apiKey = "eee19215246ad04e764f70a75f17fda0";
 
-// Event listen
+// Event listeners
 submitButton.addEventListener("click", handleButtonClick);
+inputField.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        handleButtonClick(e);
+    }
+});
 
 // Focus the input field on page load
 inputField.focus();
