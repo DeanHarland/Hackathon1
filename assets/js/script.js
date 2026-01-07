@@ -8,13 +8,22 @@ const chanceRain = document.querySelector("#chance-rain");
 const todayTemp = document.querySelector("#today-temp");
 const mainIcon = document.querySelector("#main-icon");
 // Todays forecast section
+const todaysForecastTitle = document.querySelector("#today-forecast-title");
 const todaysForecast = document.querySelector("#today-forecast");
+// Main containers
+const mainForecastContainer = document.querySelector(
+    "#main-forecast-container"
+);
+const weeklyForecastContainer = document.querySelector(
+    "#weekly-forecast-container"
+);
 // air conditions section
 const realFeel = document.querySelector("#real-feel");
 const Wind = document.querySelector("#wind");
 const rainChance = document.querySelector("#air-rain-chance");
 const windDirection = document.querySelector("#wind-direction");
 // Seven day forecast sectiopn
+const weeklyForecastTitle = document.querySelector("#weekly-forecast-title");
 const sevenDayForecast = document.getElementById("7-day-container");
 
 // API KEY
@@ -52,6 +61,10 @@ function handleButtonClick(e) {
             // Log API response for debugging
             console.log(data);
 
+            // Show the forecast containers
+            mainForecastContainer.style.display = "block";
+            weeklyForecastContainer.style.display = "block";
+
             // Display current weather information for main forecast
             let weatherIcon = data.list[0].weather[0].icon;
             mainIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherIcon}@4x.png"></img>`;
@@ -67,10 +80,16 @@ function handleButtonClick(e) {
             rainChance.innerText = `${data.list[0].pop * 100}%`;
             windDirection.innerText = `${data.list[0].wind.deg}°`;
 
+            // Add today's forecast title
+            weeklyForecastTitle.innerText = "WEEKLY FORECAST";
+
             // Loop through the next 5 days and add forecast(Because there are 3 hours intervals so 8 is full day)
             for (let i = 1; i <= 5; i++) {
                 addForecast(data.list[i * 8 - 1], i);
             }
+
+            // Add today's forecast title
+            todaysForecastTitle.innerText = "TODAY'S FORECAST";
 
             // Loop through the 6 blocks of hours
             for (let i = 1; i <= 6; i++) {
@@ -87,12 +106,13 @@ function addForecast(data, days) {
     // Weather icon image
     let imgHtml = `<image src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png"></image>`;
     // Get the date from the API and format it
+    let weekday = formatWeekday(data.dt);
     let dateString = formatDate(data.dt);
 
     // Build HTML for the forecast
     let htmlString = `
-            <div class="col-3">
-                <span>${days} day(s) from now</span>
+            <div class="col-2">
+                <span>${weekday}</span>
             </div>
             <div class="col-3">
                 ${imgHtml}
@@ -111,7 +131,7 @@ function addForecast(data, days) {
     inputField.focus();
 }
 
-function addTodaysForecast(data, hours) {
+function addTodaysForecast(data) {
     let weatherIcon = data.weather[0].icon;
     // time
     let timeString = formatTime(data.dt);
@@ -122,17 +142,12 @@ function addTodaysForecast(data, hours) {
 
     // Build HTML for the forecast
     let htmlString = `
-            <div class="col-sm-4 col-lg-2 ">
+            <div class="col-6 col-sm-4 col-xl-2 ">
                 <span>${timeString}</span>
                 <br>
-            
-        
                  ${imgHtml}
                  <br>
-
                 <span>${temp}</h3>
-                
-                
             </div>
             `;
 
@@ -173,4 +188,12 @@ function formatTime(unixTimestamp) {
 
     // Convert to readable string
     return date.toLocaleTimeString("en-GB", options).toLowerCase();
+}
+
+// Convert Unix timestamp to weekday (e.g. Mon, Tue, Wed)
+function formatWeekday(unixTimestamp) {
+    let milliseconds = unixTimestamp * 1000;
+    let date = new Date(milliseconds);
+    let options = { weekday: "short" };
+    return date.toLocaleDateString("en-GB", options);
 }
