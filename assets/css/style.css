@@ -1,5 +1,14 @@
+/* Prevent horizontal scroll from Bootstrap row negative margins */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
-
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
 
 @media screen and (min-width: 576px) {
     .navbar .container-fluid,
