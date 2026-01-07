@@ -67,15 +67,13 @@ function handleButtonClick(e) {
 
             // Loop through the next 5 days and add forecast(Because there are 3 hours intervals so 8 is full day)
             for (let i = 1; i <= 5; i++) {
-                addForecast(data.list[i*8-1], i);
+                addForecast(data.list[i * 8 - 1], i);
             }
 
             // Loop through the 6 blocks of hours
             for (let i = 1; i <= 6; i++) {
                 addTodaysForecast(data.list[i], i);
             }
-
-
         });
 }
 
@@ -111,9 +109,8 @@ function addForecast(data, days) {
     inputField.focus();
 }
 
-function addTodaysForecast(data,hours){
-
-    let weatherIcon =data.weather[0].icon;
+function addTodaysForecast(data, hours) {
+    let weatherIcon = data.weather[0].icon;
     // time
     let timeString = formatTime(data.dt);
     // Weather Icon
@@ -123,7 +120,7 @@ function addTodaysForecast(data,hours){
 
     // Build HTML for the forecast
     let htmlString = `
-            <div class="col-2 ">
+            <div class="col-sm-4 col-lg-2 ">
                 <span>${timeString}</span>
                 <br>
             
@@ -137,13 +134,10 @@ function addTodaysForecast(data,hours){
             </div>
             `;
 
-            todaysForecast.innerHTML += htmlString;
-            inputField.value = "";
-            inputField.focus();
-
+    todaysForecast.innerHTML += htmlString;
+    inputField.value = "";
+    inputField.focus();
 }
-
-
 
 // Convert Unix timestamp to readable date
 function formatDate(unixTimestamp) {
@@ -172,7 +166,7 @@ function formatTime(unixTimestamp) {
     let options = {
         hour: "numeric",
         minute: "2-digit",
-        hour12: true
+        hour12: true,
     };
 
     // Convert to readable string
