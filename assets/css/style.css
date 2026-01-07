@@ -10,6 +10,19 @@ body {
     margin-right: 0;
 }
 
+/* Hide forecast containers until button is clicked */
+#main-forecast-container,
+#weekly-forecast-container {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    #main-icon img {
+        width: 90%;
+        height: auto;
+    }
+}
+
 @media screen and (min-width: 576px) {
     .navbar .container-fluid,
     .navbar-expand-sm .navbar-collapse,
@@ -42,11 +55,6 @@ body {
         display: flex;
         gap: 1rem;
     }
-
-    /* .search-container {
-        flex: 1;
-        overflow: hidden;
-    } */
 
     #main-forecast-container {
         flex: 2;
