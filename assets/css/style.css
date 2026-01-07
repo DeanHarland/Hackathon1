@@ -1,3 +1,10 @@
+/* page title */
+#page-title {
+    margin-top: 5px;
+    padding-top: 0px;
+    padding-left: 1rem;
+}
+
 /* Prevent horizontal scroll from Bootstrap row negative margins */
 html,
 body {
@@ -22,10 +29,33 @@ body {
     transform-origin: center; /* Essential for spinning in place */
 }
 
+@media screen and (max-width: 575px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+        margin-left: auto;
+        gap: 3.5rem;
+        margin-right: 1rem;
+    }
+}
+
 @media screen and (max-width: 576px) {
     #main-icon img {
         width: 90%;
         height: auto;
+    }
+
+    #page-title {
+        margin-top: 10px;
     }
 }
 
@@ -34,7 +64,7 @@ body {
     .navbar-expand-sm .navbar-collapse,
     .navbar-expand-sm .navbar-nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
     .navbar {
         width: 10vw;
@@ -46,7 +76,7 @@ body {
     }
 
     .navbar-brand {
-        margin-left: 0.5rem;
+        margin-left: 1rem;
     }
 
     .main-content {
