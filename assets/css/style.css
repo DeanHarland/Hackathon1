@@ -16,6 +16,12 @@ body {
     display: none;
 }
 
+/* wind arrow animation */
+#wind-arrow {
+    transition: transform 1s ease-in-out;
+    transform-origin: center; /* Essential for spinning in place */
+}
+
 @media screen and (max-width: 576px) {
     #main-icon img {
         width: 90%;

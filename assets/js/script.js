@@ -22,6 +22,7 @@ const realFeel = document.querySelector("#real-feel");
 const Wind = document.querySelector("#wind");
 const rainChance = document.querySelector("#air-rain-chance");
 const windDirection = document.querySelector("#wind-direction");
+const windArrow = document.getElementById("wind-arrow");
 // Seven day forecast sectiopn
 const weeklyForecastTitle = document.querySelector("#weekly-forecast-title");
 const sevenDayForecast = document.getElementById("7-day-container");
@@ -83,7 +84,10 @@ function handleButtonClick(e) {
             )}°C`;
             Wind.innerText = `${data.list[0].wind.speed} m/s`;
             rainChance.innerText = `${data.list[0].pop * 100}%`;
-            windDirection.innerText = `${data.list[0].wind.deg}°`;
+
+            // Set wind direction
+            let windDegrees = data.list[0].wind.deg;
+            setWindDirection(windDegrees);
 
             // Add today's forecast title
             weeklyForecastTitle.innerText = "WEEKLY FORECAST";
@@ -159,6 +163,28 @@ function addTodaysForecast(data) {
     todaysForecast.innerHTML += htmlString;
     inputField.value = "";
     inputField.focus();
+}
+
+// Set wind direction arrow and label
+function setWindDirection(windDegrees) {
+    // 1. Define the 8 directions
+    const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+
+    // 2. Math to find which of the 8 segments the degree falls into
+    // We add 22.5 so that "North" spans from -22.5 to +22.5
+    let index = Math.round(windDegrees / 45) % 8;
+
+    // 3. The rounded degree for the arrow (0, 45, 90, 135, etc.)
+    let snappedDeg = index * 45;
+
+    // 4. Update the UI
+    windArrow.style.transform = `rotate(${snappedDeg}deg)`;
+
+    windDirection.innerText = directions[index];
+
+    console.log(
+        `API said: ${windDegrees}°. Snapped to: ${directions[index]} (${snappedDeg}°)`
+    );
 }
 
 // Convert Unix timestamp to readable date
