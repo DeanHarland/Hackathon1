@@ -65,10 +65,17 @@ function handleButtonClick(e) {
             rainChance.innerText = `${data.list[0].pop * 100}%`;
             windDirection.innerText = `${data.list[0].wind.deg}°`;
 
-            // Loop through the next 5 days and add forecast
+            // Loop through the next 5 days and add forecast(Because there are 3 hours intervals so 8 is full day)
             for (let i = 1; i <= 5; i++) {
-                addForecast(data.list[i], i);
+                addForecast(data.list[i*8-1], i);
             }
+
+            // Loop through the 6 blocks of hours
+            for (let i = 1; i <= 6; i++) {
+                addTodaysForecast(data.list[i], i);
+            }
+
+
         });
 }
 
@@ -104,6 +111,40 @@ function addForecast(data, days) {
     inputField.focus();
 }
 
+function addTodaysForecast(data,hours){
+
+    let weatherIcon =data.weather[0].icon;
+    // time
+    let timeString = formatTime(data.dt);
+    // Weather Icon
+    let imgHtml = `<image src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png"></image>`;
+    // temp
+    let temp = `${data.main.temp}°C`;
+
+    // Build HTML for the forecast
+    let htmlString = `
+            <div class="col-2 ">
+                <span>${timeString}</span>
+                <br>
+            
+        
+                 ${imgHtml}
+                 <br>
+
+                <span>${temp}</h3>
+                
+                
+            </div>
+            `;
+
+            todaysForecast.innerHTML += htmlString;
+            inputField.value = "";
+            inputField.focus();
+
+}
+
+
+
 // Convert Unix timestamp to readable date
 function formatDate(unixTimestamp) {
     // Step 1: Multiply by 1000 (JavaScript needs milliseconds, not seconds)
@@ -117,4 +158,23 @@ function formatDate(unixTimestamp) {
 
     // Step 4: Convert to a readable string
     return date.toLocaleDateString("en-GB", options);
+}
+
+// Convert Unix timestamp to readable time (e.g. 12:00pm)
+function formatTime(unixTimestamp) {
+    // Convert seconds to milliseconds
+    let milliseconds = unixTimestamp * 1000;
+
+    // Create Date object
+    let date = new Date(milliseconds);
+
+    // Format options for 12-hour time with am/pm
+    let options = {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+    };
+
+    // Convert to readable string
+    return date.toLocaleTimeString("en-GB", options).toLowerCase();
 }
