@@ -90,7 +90,7 @@ function handleButtonClick(e) {
             setWindDirection(windDegrees);
 
             // Add today's forecast title
-            weeklyForecastTitle.innerText = "WEEKLY FORECAST";
+            weeklyForecastTitle.innerText = "Weekly Forecast";
 
             // Loop through the next 5 days and add forecast(Because there are 3 hours intervals so 8 is full day)
             for (let i = 1; i <= 5; i++) {
@@ -98,7 +98,7 @@ function handleButtonClick(e) {
             }
 
             // Add today's forecast title
-            todaysForecastTitle.innerText = "TODAY'S FORECAST";
+            todaysForecastTitle.innerText = "Today's Forecast";
 
             // Loop through the 6 blocks of hours
             for (let i = 1; i <= 6; i++) {

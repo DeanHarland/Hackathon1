@@ -7,6 +7,9 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -23,13 +26,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">A</a>
+                        <a class="nav-link active" aria-current="page" href="#"><i
+                                class="fa-regular fa-lightbulb"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">B</a>
+                        <a class="nav-link" href="https://www.metoffice.gov.uk/" target="_blank"><i
+                                class="fa-solid fa-share"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">C</a>
+                        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">D</a>
@@ -41,9 +46,9 @@
 
     <!-- Page Title -->
     <div id="page-title" class="main-content">
-        <h1>The Wet Office - Weather Forecast</h1>
+        <h1>Hello Weather!</h1>
     </div>
-<!-- Search Input Container -->
+    <!-- Search Input Container -->
 
     <div id="search-container" class="main-content mb-2 ">
         <div class="row">
@@ -56,12 +61,12 @@
         </div>
     </div>
 
-<!-- Main forecast Section -->
+    <!-- Main forecast Section -->
     <div class="content-wrapper main-content">
         <div id="main-forecast-container" class="mb-2 mt-4">
             <div class="row  text-white">
                 <div class="col-6 rounded-start card-color border-end-0">
-                    <h2 id="city-name"></h2>
+                    <h1 id="city-name"></h1>
                     <p id="chance-rain"></p>
                     <h1 id="today-temp"></h1>
                 </div>
@@ -69,16 +74,16 @@
                     <div id="main-icon"></div>
                 </div>
 
-    <!-- Todays Forecast -->
-                <div id="3-hour-forecast" class="col-12 rounded mb-4 mt-4 card-color" >
-                    <h1 id="today-forecast-title"></h1>
+                <!-- Todays Forecast -->
+                <div id="3-hour-forecast" class="col-12 rounded mb-4 mt-4 card-color">
+                    <h2 id="today-forecast-title"></h2>
                     <div id="today-forecast" class="row ">
                     </div>
                 </div>
 
-    <!-- Air Conditions Container -->
+                <!-- Air Conditions Container -->
                 <div id="air-conditions-container" class="col-12 rounded card-color">
-                    <h1>AIR CONDITIONS</h1>
+                    <h2>Air Conditions</h2>
                     <div class="row">
                         <div class="col-6 col-md-6">
 
@@ -115,10 +120,10 @@
 
         <!-- Weekly Forecast Container -->
 
-        <div id="weekly-forecast-container" class="mt-4" >
+        <div id="weekly-forecast-container" class="mt-4">
             <div class="row rounded  card-color">
                 <div class="col-12">
-                    <h1 id="weekly-forecast-title" ></h1>
+                    <h2 id="weekly-forecast-title"></h2>
                     <div id="7-day-container" class=" row">
                     </div>
                 </div>

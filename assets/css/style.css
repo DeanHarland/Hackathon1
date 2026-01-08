@@ -1,32 +1,37 @@
-:root{
+:root {
     --main-bg-color: #d1dfff;
     --dark-bg-color: #202633;
     --main-text-color: #000;
     --dark-text-color: #fff;
 
-    --main-outer-color:#e3ecff;
-    --dark-outer-color:#101319;
+    --main-outer-color: #e3ecff;
+    --dark-outer-color: #101319;
 }
-body{
+body {
     background-color: var(--main-outer-color);
+    font-family: "Montserrat", sans-serif;
 }
 
-.card-color{
+.card-color {
     background-color: var(--main-bg-color);
     color: var(--dark-bg-color);
     border: #202633 1px solid;
 }
 
-.card-color-add{
+.card-color-add {
     background-color: var(--main-bg-color);
     color: var(--dark-bg-color);
     border: #202633 1px solid;
 }
-
 
 /* Nav Bar  */
-.navbar{
+.navbar {
     background-color: #8299cb !important;
+    font-size: 1.5rem;
+}
+
+.fa-umbrella {
+    font-size: 1.5rem;
 }
 
 /* page title */
@@ -34,6 +39,15 @@ body{
     margin-top: 5px;
     padding-top: 0px;
     padding-left: 1rem;
+    font-family: "Bungee Shade", cursive;
+    color: var(--dark-bg-color);
+}
+
+/* Submit button */
+.input-group .btn {
+    background-color: #8299cb;
+    border: none;
+    color: var(--dark-bg-color);
 }
 
 /* Prevent horizontal scroll from Bootstrap row negative margins */
@@ -58,7 +72,6 @@ body {
 #wind-arrow {
     transition: transform 1s ease-in-out;
     transform-origin: center; /* Essential for spinning in place */
-    
 }
 
 @media screen and (max-width: 575px) {
@@ -75,7 +88,7 @@ body {
         flex-direction: row;
         align-items: center;
         margin-left: auto;
-        gap: 3.5rem;
+        gap: 3rem;
         margin-right: 1rem;
     }
 }
