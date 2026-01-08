@@ -30,6 +30,11 @@ body {
     font-size: 1.5rem;
 }
 
+.nav-item img {
+    width: 3rem;
+    height: auto;
+}
+
 .fa-umbrella {
     font-size: 1.5rem;
 }
@@ -43,8 +48,9 @@ body {
     color: var(--dark-bg-color);
 }
 
-/* Submit button */
-.input-group .btn {
+/* Buttons */
+.input-group .btn,
+.modal-footer .btn {
     background-color: #8299cb;
     border: none;
     color: var(--dark-bg-color);
