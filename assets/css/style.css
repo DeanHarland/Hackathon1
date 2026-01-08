@@ -12,6 +12,8 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+
+
 .card-color {
     background-color: var(--main-bg-color);
     color: var(--dark-bg-color);
@@ -154,4 +156,71 @@ body {
         overflow: hidden;
         padding-left: 12px;
     }
+}
+
+
+
+/* Dark Mode Section */
+body.dark-mode {
+  background-color: var(--dark-outer-color) !important;
+  color: #fff !important;
+}
+/* Cards */
+body.dark-mode .card-color,
+body.dark-mode .card-color-add {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+    border: 1px solid #3a4252;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+    background-color: var(--dark-bg-color) !important;
+}
+body.dark-mode .navbar .nav-link,
+body.dark-mode .navbar .navbar-brand,
+body.dark-mode .navbar .fa-umbrella {
+    color: var(--dark-text-color) !important;
+}
+body.dark-mode .navbar-toggler-icon,
+body.dark-mode .btn-close {
+    filter: invert(1);
+}
+
+/* Page title */
+body.dark-mode #page-title {
+    color: var(--dark-text-color);
+}
+
+/* Buttons */
+body.dark-mode .input-group .btn,
+body.dark-mode .modal-footer .btn {
+    background-color: #5672a6;
+    color: #fff;
+}
+
+/* Inputs */
+body.dark-mode .form-control {
+    background-color: #2a3242;
+    color: #fff;
+    border-color: #3a4252;
+}
+body.dark-mode .form-control::placeholder {
+    color: #b7c0d8;
+}
+
+/* Modal */
+body.dark-mode .modal-content {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+    border-color: #3a4252;
+}
+
+/* Wind arrow visibility on dark */
+body.dark-mode #wind-arrow {
+    fill: #fff !important;
+}
+/* Met Office logo: invert in dark mode for contrast */
+body.dark-mode .nav-item img[alt="Met Office Logo"] {
+    filter: invert(1);
 }
