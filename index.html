@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hello Weather!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link
@@ -18,7 +18,7 @@
     <!-- Main div with all in -->
     <nav class="navbar navbar-expand-sm bg-body-tertiary me-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-umbrella"></i></a>
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-umbrella"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,14 +26,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="dark-mode-toggle" class="nav-link active" aria-current="page" href="#"><i class="fa-regular fa-lightbulb"></i></a>
+                        <a id="dark-mode-toggle" class="nav-link active" aria-current="page"><i
+                                class="fa-regular fa-lightbulb"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.metoffice.gov.uk/" target="_blank"><img
                                 src="assets/images/met-office-nbg-svg.svg" alt="Met Office Logo"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#about-modal"><i
+                        <a class="nav-link" href="modal" data-bs-toggle="modal" data-bs-target="#about-modal"><i
                                 class="fa-solid fa-circle-info"></i></a>
                     </li>
                     <li class="nav-item">
@@ -46,7 +47,9 @@
 
     <!-- Page Title -->
     <div id="page-title" class="main-content">
-        <h1>Hello Weather!</h1>
+        <a href="index.html">
+            <h1>Hello Weather!</h1>
+        </a>
     </div>
     <!-- Search Input Container -->
 
@@ -136,18 +139,17 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">About Hello Weather!</h5>
+                    <h3 class="modal-title">About Hello Weather!</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>This weather app was created by:
+                    <p>This weather app was created by:</p>
                     <ul>
                         <li>Joshua Cottle</li>
                         <li>Dean Harland</li>
                         <li>Wouter Klinkenberg</li>
                     </ul>
                     &copy; Code Institute Hackathon 1, 2026
-                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-bs-dismiss="modal">Close</button>

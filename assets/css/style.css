@@ -12,8 +12,6 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-
-
 .card-color {
     background-color: var(--main-bg-color);
     color: var(--dark-bg-color);
@@ -48,6 +46,13 @@ body {
     padding-left: 1rem;
     font-family: "Bungee Shade", cursive;
     color: var(--dark-bg-color);
+}
+
+#page-title a,
+#page-title a:hover,
+#page-title a:focus {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* Buttons */
@@ -158,12 +163,10 @@ body {
     }
 }
 
-
-
 /* Dark Mode Section */
 body.dark-mode {
-  background-color: var(--dark-outer-color) !important;
-  color: #fff !important;
+    background-color: var(--dark-outer-color) !important;
+    color: #fff !important;
 }
 /* Cards */
 body.dark-mode .card-color,

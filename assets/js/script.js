@@ -48,7 +48,6 @@ function handleButtonClick(e) {
         return;
     }
 
-
     // Clear previous forecast
     todaysForecast.innerHTML = "";
     sevenDayForecast.innerHTML = "";
@@ -65,14 +64,12 @@ function handleButtonClick(e) {
             return response.json();
         })
         .then(function (data) {
-            
-
             // Log API response for debugging
             console.log(data);
 
             // Prevent from running if location is invalid.
-            if(data.message ==="city not found"){
-                alert("Please enter a valid location");                
+            if (data.message === "city not found") {
+                alert("Please enter a valid location");
                 inputField.focus();
                 return;
             }
@@ -239,8 +236,20 @@ function formatWeekday(unixTimestamp) {
 }
 
 // Dark Mode Toggle
-
 const darkModeToggle = document.querySelector("#dark-mode-toggle");
+const THEME_KEY = "hello-weather-theme";
 
-darkModeToggle.addEventListener('click', () => {document.body.classList.toggle('dark-mode');
-})
+function setTheme(isDark) {
+    document.body.classList.toggle("dark-mode", isDark);
+    localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+}
+
+// On load: use saved choice, otherwise respect system preference
+const savedTheme = localStorage.getItem(THEME_KEY);
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+setTheme(savedTheme ? savedTheme === "dark" : prefersDark);
+
+darkModeToggle.addEventListener("click", () => {
+    const isDark = !document.body.classList.contains("dark-mode");
+    setTheme(isDark);
+});
