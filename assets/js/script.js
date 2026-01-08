@@ -48,6 +48,7 @@ function handleButtonClick(e) {
         return;
     }
 
+
     // Clear previous forecast
     todaysForecast.innerHTML = "";
     sevenDayForecast.innerHTML = "";
@@ -64,9 +65,17 @@ function handleButtonClick(e) {
             return response.json();
         })
         .then(function (data) {
+            
+
             // Log API response for debugging
             console.log(data);
 
+            // Prevent from running if location is invalid.
+            if(data.message ==="city not found"){
+                alert("Please enter a valid location");                
+                inputField.focus();
+                return;
+            }
             // Show the forecast containers
             mainForecastContainer.style.display = "block";
             weeklyForecastContainer.style.display = "block";
