@@ -145,11 +145,15 @@ Responsive design was tested on the following devices:
 
 **HTML** — No errors were returned when passing through the official W3C validator
 
+![HTML validator screenshot](./assets/images/html-validator-hello-weather.png)
+
 **CSS** — No errors were found when passing through the official (Jigsaw) validator
+
+![CSS validator screenshot](./assets/images/css-validator-hello-weather.png)
 
 **Lighthouse report** — No major errors found, 94% or higher scores across the board
 
-![Lighthouse report showing performance 100%, accessibility 94% and best practices 100%](doc/images/lighthouse-report-placeholder.png)
+![Lighthouse report showing performance 100%, accessibility 94% and best practices 100%](./assets/images/lighthouse-report-hello-weather.png)
 
 ## 💡 Credits
 
