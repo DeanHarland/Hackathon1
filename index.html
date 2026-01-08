@@ -30,11 +30,12 @@
                                 class="fa-regular fa-lightbulb"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.metoffice.gov.uk/" target="_blank"><i
-                                class="fa-solid fa-share"></i></a>
+                        <a class="nav-link" href="https://www.metoffice.gov.uk/" target="_blank"><img
+                                src="assets/images/met-office-nbg-svg.svg" alt="Met Office Logo"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i></a>
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#about-modal"><i
+                                class="fa-solid fa-circle-info"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">D</a>
@@ -131,6 +132,30 @@
         </div>
     </div>
 
+    <!-- About/settings modal -->
+    <div class="modal" id="about-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">About Hello Weather!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This weather app was created by:
+                    <ul>
+                        <li>Joshua Cottle</li>
+                        <li>Dean Harland</li>
+                        <li>Wouter Klinkenberg</li>
+                    </ul>
+                    &copy; Code Institute Hackathon 1, 2026
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/2e6f8ddc3b.js" crossorigin="anonymous"></script>
