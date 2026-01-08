@@ -228,3 +228,10 @@ function formatWeekday(unixTimestamp) {
     let options = { weekday: "short" };
     return date.toLocaleDateString("en-GB", options);
 }
+
+// Dark Mode Toggle
+
+const darkModeToggle = document.querySelector("#dark-mode-toggle");
+
+darkModeToggle.addEventListener('click', () => {document.body.classList.toggle('dark-mode');
+})
