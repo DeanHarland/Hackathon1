@@ -151,7 +151,7 @@ function addTodaysForecast(data) {
 
     // Build HTML for the forecast
     let htmlString = `
-            <div class="col-6 col-sm-4 col-xl-2 ">
+            <div class="col-6 col-sm-4 col-xl-2 mb-3">
                 <span>${timeString}</span>
                 <br>
                  ${imgHtml}

@@ -1,3 +1,34 @@
+:root{
+    --main-bg-color: #d1dfff;
+    --dark-bg-color: #202633;
+    --main-text-color: #000;
+    --dark-text-color: #fff;
+
+    --main-outer-color:#e3ecff;
+    --dark-outer-color:#101319;
+}
+body{
+    background-color: var(--main-outer-color);
+}
+
+.card-color{
+    background-color: var(--main-bg-color);
+    color: var(--dark-bg-color);
+    border: #202633 1px solid;
+}
+
+.card-color-add{
+    background-color: var(--main-bg-color);
+    color: var(--dark-bg-color);
+    border: #202633 1px solid;
+}
+
+
+/* Nav Bar  */
+.navbar{
+    background-color: #8299cb !important;
+}
+
 /* page title */
 #page-title {
     margin-top: 5px;
@@ -27,6 +58,7 @@ body {
 #wind-arrow {
     transition: transform 1s ease-in-out;
     transform-origin: center; /* Essential for spinning in place */
+    
 }
 
 @media screen and (max-width: 575px) {
@@ -80,7 +112,7 @@ body {
     }
 
     .main-content {
-        margin-left: 10vw;
+        margin-left: 11vw;
         width: calc(100% - 10vw);
         overflow-x: hidden;
     }
